@@ -9,7 +9,7 @@ export default function Query3Page() {
                 Last question!
             </h2>
             <p className="text-sm font-light">
-                Remove any weeks you can't make.
+                Remove any weeks you can&apos;t make.
             </p>
             <br />
         </div>

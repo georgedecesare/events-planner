@@ -9,7 +9,6 @@ import Query2Page from "./query2";
 import Query3Page from "./query3";
 
 export default function InvitationPage() {
-    const params = useParams();
     const [page, changePage] = React.useState(1);
 
     function nextPage() {

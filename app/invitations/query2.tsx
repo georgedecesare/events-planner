@@ -9,7 +9,7 @@ export default function Query2Page() {
                 Almost there!
             </h2>
             <p className="text-sm font-light">
-                Please select the days of the week you'll prefer to attend an event.
+                Please select the days of the week you&apos;ll prefer to attend an event.
             </p>
             <br />
             <div  className="flex flex-col gap-2">
