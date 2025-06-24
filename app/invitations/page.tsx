@@ -1,6 +1,5 @@
 'use client';
 
-import { useParams } from "next/navigation";
 import PeriodToggle from "./period-toggle";
 import Query1Page from "./query1";
 import PageControl from "./page-control";
