@@ -1,7 +1,7 @@
 'use client';
 
 export default function TextInput({
-  type = "text",
+  type = 'text',
   placeholder,
   onChangeAction,
 }: {
@@ -10,12 +10,12 @@ export default function TextInput({
   onChangeAction: (value: string) => void;
 }) {
   return (
-    <div className="flex flex-col mb-4">
+    <div className="mb-4 flex flex-col">
       <input
         type={type}
         placeholder={placeholder}
         onChange={(e) => onChangeAction(e.target.value)}
-        className="px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+        className="rounded-lg border border-gray-300 px-4 py-2 focus:ring-2 focus:ring-blue-500 focus:outline-none"
       />
     </div>
   );

@@ -1,6 +1,36 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Events Availability Planner
 
-## Getting Started
+This project is a solution for finding availability for events, which I created for a social group of about 20 people.
+It is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+
+## Development
+
+### Installation
+
+To get started, clone the repository and install the dependencies:
+
+```bash
+npm install
+# or
+yarn install
+# or
+pnpm install
+# or
+bun install
+```
+
+It is recommended (but not required) to run this project in VSCode. There are
+some recommended extensions in the `.vscode/extensions.json` file to help with
+development. These include:
+
+- [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) - for linting JavaScript and TypeScript code.
+- [Prettier - Code formatter](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode) - for formatting code.
+- [Tailwind CSS IntelliSense](https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss) - for Tailwind CSS support.
+
+All commits will fail the CI/CD pipeline if the code is not formatted or linted correctly.
+You can also run `npx next lint` to check for linting errors.
+
+### Running the Development Server
 
 First, run the development server:
 
