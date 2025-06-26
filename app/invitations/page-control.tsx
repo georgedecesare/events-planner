@@ -28,7 +28,8 @@ function Indicator({ active }: { active: boolean }) {
   return (
     <div className="flex h-3 w-3 items-center justify-center">
       <div
-        className={`rounded-full ${active ? 'h-3 w-3' : 'h-2 w-2'} ${active ? 'bg-selected' : 'bg-white'}`}
+        className={`rounded-full ${active ? 'h-3 w-3' : 'h-2 w-2'}
+          ${active ? 'bg-selected' : 'bg-white'}`}
       />
     </div>
   );

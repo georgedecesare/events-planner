@@ -11,7 +11,10 @@ export default function Signup() {
 
   return (
     <>
-      <div className="min-h-screen min-w-screen flex-col items-center space-y-5 px-10 pt-10 md:px-[30%]">
+      <div
+        className="min-h-screen min-w-screen flex-col items-center space-y-5 px-10 pt-10
+          md:px-[30%]"
+      >
         <h1 className="flex items-center justify-center text-2xl font-bold">
           Welcome to our group!
         </h1>
