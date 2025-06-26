@@ -35,7 +35,8 @@ function Button({
         active
           ? 'bg-white text-black'
           : 'border-1 border-white bg-black text-white'
-      } rounded-3xl px-4 py-2 font-bold transition-colors duration-200 hover:cursor-pointer`}
+        } rounded-3xl px-4 py-2 font-bold transition-colors duration-200
+        hover:cursor-pointer`}
       onClick={onClick}
     >
       {label}

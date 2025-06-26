@@ -19,6 +19,7 @@ const eslintConfig = [
     },
     rules: {
       'prettier/prettier': 'warn',
+      'react/jsx-one-expression-per-line': ['error', { allow: 'literal' }],
     },
   },
   eslintConfigPrettier,
