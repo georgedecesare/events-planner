@@ -12,7 +12,7 @@ export default function Signup() {
   return (
     <>
       <div
-        className="min-h-screen min-w-screen flex-col items-center space-y-5 px-10 pt-10
+        className="min-h-screen min-w-screen flex flex-col items-center space-y-5 px-10 pt-10
           md:px-[30%]"
       >
         <h1 className="flex items-center justify-center text-2xl font-bold">
@@ -32,9 +32,7 @@ export default function Signup() {
           <br />
           Down with the appropriation! Our group reveals the truth!
         </p>
-        <br />
-        <br />
-        <div className="text-center">
+        <div className="text-center mt-10">
           <h2 className="text-lg font-bold text-white">Create an account</h2>
           <p className="text-footnote text-sm">
             Enter your email to sign up for this app
@@ -50,8 +48,7 @@ export default function Signup() {
         >
           Continue
         </div>
-        <br />
-        <div className="flex min-w-full items-center justify-center">
+        <div className="flex min-w-full items-center justify-center mt-5">
           <div className="h-px w-1/2 bg-gray-300">&nbsp;</div>
           <div className="text-footnote px-2">or</div>
           <div className="h-px w-1/2 bg-gray-300">&nbsp;</div>
