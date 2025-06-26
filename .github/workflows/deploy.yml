@@ -31,4 +31,4 @@ jobs:
           username: ${{ secrets.SSH_USER }}
           key: ${{ secrets.SSH_KEY }}
           script: |
-            bash ~/events-deploy.sh
+            # bash -l -c '~/events-deploy.sh'
