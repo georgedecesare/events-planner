@@ -60,7 +60,7 @@ function WeekCheckbox() {
       <input
         type="checkbox"
         className="peer block appearance-none border-white border-1 size-8 rounded-full
-          cursor-pointer focus:ring-2 checked:bg-orange-accent checked:border-none"
+          cursor-pointer checked:bg-orange-accent checked:border-none"
       />
       <span
         className="material-symbols-outlined text-white text-[16px] absolute left-1 top-1
