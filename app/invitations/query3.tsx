@@ -5,27 +5,30 @@ import 'material-symbols';
 
 export default function Query3Page() {
   return (
-    <div>
+    <>
       <h2 className="text-lg font-extrabold">Last question!</h2>
       <p className="text-sm font-light">
         Remove any weeks you can&apos;t make.
       </p>
       <br />
-      <Weeks month="July" />
-    </div>
+      <div className="overflow-y-scroll max-h-full pb-20">
+        <Weeks month="July" />
+        <Weeks month="August" />
+      </div>
+    </>
   );
 }
 
 function Weeks({ month }: { month: string }) {
   return (
-    <>
+    <div className="mb-10">
       <p className="text-orange-accent font-bold">{month}</p>
       <hr className="mb-5 mt-1" />
       <Week start={30} end={6} />
       <Week start={7} end={13} />
       <Week start={14} end={20} />
       <Week start={21} end={27} />
-    </>
+    </div>
   );
 }
 
