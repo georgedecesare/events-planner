@@ -26,8 +26,8 @@ function Indicator({ active }: { active: boolean }) {
   return (
     <div className="flex h-3 w-3 items-center justify-center">
       <div
-        className={`rounded-full ${active ? 'h-3 w-3' : 'h-2 w-2'}
-          ${active ? 'bg-orange-accent' : 'bg-white'}`}
+        className={` rounded-full transition-all duration-200
+          ${active ? 'size-3 bg-orange-accent' : 'size-2 bg-white'} `}
       />
     </div>
   );
