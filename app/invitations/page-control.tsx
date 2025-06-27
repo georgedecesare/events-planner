@@ -23,8 +23,6 @@ export default function PageControl({
 }
 
 function Indicator({ active }: { active: boolean }) {
-  const something = 'this is a test';
-  console.log(something);
   return (
     <div className="flex h-3 w-3 items-center justify-center">
       <div
