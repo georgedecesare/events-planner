@@ -8,7 +8,7 @@ export default function PageControl({
   return (
     <div className="mt-5 flex w-full flex-col items-center justify-center">
       <button
-        className="bg-selected cursor-pointer rounded-3xl px-4 py-2 select-none"
+        className="bg-orange-accent cursor-pointer rounded-3xl px-4 py-2 select-none"
         onClick={nextPage}
       >
         Next
@@ -29,7 +29,7 @@ function Indicator({ active }: { active: boolean }) {
     <div className="flex h-3 w-3 items-center justify-center">
       <div
         className={`rounded-full ${active ? 'h-3 w-3' : 'h-2 w-2'}
-          ${active ? 'bg-selected' : 'bg-white'}`}
+          ${active ? 'bg-orange-accent' : 'bg-white'}`}
       />
     </div>
   );
