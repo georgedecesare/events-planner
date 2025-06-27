@@ -11,7 +11,7 @@ export default function PageControl({
         className="bg-orange-accent cursor-pointer rounded-3xl px-4 py-2 select-none"
         onClick={nextPage}
       >
-        Next
+        {page === 3 ? 'Done' : 'Next'}
       </button>
       <div className="mt-3 flex flex-row items-center gap-1">
         <Indicator active={page === 1} />
