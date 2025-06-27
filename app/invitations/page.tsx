@@ -18,7 +18,7 @@ export default function InvitationPage() {
   }
 
   return (
-    <div className="container mx-auto flex h-screen w-screen flex-col px-5 pt-10 pb-5">
+    <div className="container mx-auto flex min-h-full w-full flex-col px-5 pt-10 pb-5">
       <h1 className="text-2xl font-extrabold mb-5">Your Invitations</h1>
       <PeriodToggle />
       <div className="flex min-w-full flex-1 flex-col rounded-lg border-1 border-white p-5 mt-5">
