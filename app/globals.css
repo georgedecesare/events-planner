@@ -11,7 +11,7 @@
   --font-sans: var(--font-inter), system-ui, -apple-system, sans-serif;
   --color-gray-container: #242424;
   --color-footnote: #828282;
-  --color-selected: #d48439;
+  --color-orange-accent: #d48439;
 }
 
 @media (prefers-color-scheme: dark) {

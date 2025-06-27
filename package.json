@@ -12,6 +12,7 @@
     "bcrypt": "^6.0.0",
     "express-session": "^1.18.1",
     "framer-motion": "^12.19.1",
+    "material-symbols": "^0.31.9",
     "next": "15.3.4",
     "passport": "^0.7.0",
     "passport-google-oauth20": "^2.0.0",

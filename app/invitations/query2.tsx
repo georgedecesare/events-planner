@@ -30,7 +30,7 @@ function Day({ name }: { name: string }) {
     <div
       className={`text-md flex w-full cursor-pointer items-center justify-center rounded-sm py-4
         text-white transition-all duration-200 ease-in-out select-none
-        ${active ? 'bg-selected' : 'bg-gray-container'}`}
+        ${active ? 'bg-orange-accent' : 'bg-gray-container'}`}
       onClick={() => setActive(!active)}
     >
       {name}

@@ -26,7 +26,7 @@ function Month({ name }: { name: string }) {
     <div
       className={`flex aspect-square w-full cursor-pointer items-center justify-center rounded-sm
         text-2xl font-bold text-white transition-all duration-200 ease-in-out
-        select-none ${active ? 'bg-selected' : 'bg-gray-container'}`}
+        select-none ${active ? 'bg-orange-accent' : 'bg-gray-container'}`}
       onClick={() => setActive(!active)}
     >
       {name}
