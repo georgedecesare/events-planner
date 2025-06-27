@@ -37,7 +37,7 @@ export default function InvitationPage() {
                 stiffness: 300,
                 damping: 30,
               }}
-              className="absolute inset-0 h-full w-full"
+              className="absolute inset-0 h-full w-full flex flex-col"
             >
               {(() => {
                 switch (page) {
