@@ -3,44 +3,47 @@
 import React from 'react';
 
 export default function PeriodToggle() {
-  const [activePeriod, setActivePeriod] = React.useState<Period>(Period.Summer);
   return (
     <div className="flex flex-row gap-4">
-      <Button
-        active={activePeriod == Period.Summer}
+      <RadioButton
+        name="period"
+        value={Period.Summer}
         label="Summer Period"
-        onClick={() => setActivePeriod(Period.Summer)}
+        defaultChecked
       />
-      <Button
-        active={activePeriod == Period.Autumn}
-        label="Autumn Period"
-        onClick={() => setActivePeriod(Period.Autumn)}
-      />
+      <RadioButton name="period" value={Period.Autumn} label="Autumn Period" />
     </div>
   );
 }
 
-function Button({
+function RadioButton({
+  name,
+  value,
   label,
-  active,
-  onClick,
+  defaultChecked,
 }: {
+  name: string;
+  value: string;
   label: string;
-  active: boolean;
-  onClick?: () => void;
+  defaultChecked?: boolean;
 }) {
   return (
-    <button
-      className={`${
-        active
-          ? 'bg-white text-black'
-          : 'border-1 border-white bg-black text-white'
-        } rounded-3xl px-4 py-2 font-bold transition-colors duration-200
-        hover:cursor-pointer`}
-      onClick={onClick}
-    >
-      {label}
-    </button>
+    <label className="flex items-center cursor-pointer">
+      <input
+        type="radio"
+        name={name}
+        value={value}
+        defaultChecked={defaultChecked}
+        className="sr-only peer"
+      />
+      <span
+        className="peer-checked:bg-white peer-checked:text-black bg-black text-white border
+          border-white rounded-3xl px-4 py-2 font-bold transition-colors duration-200
+          hover:cursor-pointer"
+      >
+        {label}
+      </span>
+    </label>
   );
 }
 
