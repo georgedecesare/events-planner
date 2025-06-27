@@ -16,7 +16,7 @@ export default function TextInput({
         placeholder={placeholder}
         onChange={(e) => onChangeAction(e.target.value)}
         className="rounded-lg border border-gray-300 px-4 py-2 focus:ring-2 focus:ring-blue-500
-          focus:outline-none"
+          focus:outline-none mt-5"
       />
     </div>
   );
