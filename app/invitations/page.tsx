@@ -10,11 +10,9 @@ import { motion, AnimatePresence } from 'framer-motion';
 
 export default function InvitationPage() {
   const [page, changePage] = React.useState(1);
-  const [direction, setDirection] = React.useState(1); // 1 for forward, -1 for backward
 
   function nextPage() {
     if (page < 3) {
-      setDirection(1);
       changePage(page + 1);
     }
   }
@@ -28,9 +26,9 @@ export default function InvitationPage() {
           <AnimatePresence initial={false} mode="sync">
             <motion.div
               key={page}
-              initial={{ x: direction * 300, opacity: 0 }}
+              initial={{ x: 300, opacity: 0 }}
               animate={{ x: 0, opacity: 1 }}
-              exit={{ x: direction * -300, opacity: 0 }}
+              exit={{ x: -300, opacity: 0 }}
               transition={{
                 type: 'spring',
                 stiffness: 300,
