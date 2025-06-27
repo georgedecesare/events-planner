@@ -29,11 +29,9 @@ body {
     system-ui,
     -apple-system,
     sans-serif;
-  max-height: 100svh;
-  overflow: hidden;
 }
 
+body,
 html {
-  max-height: 100svh;
-  overflow: hidden;
+  height: 100svh;
 }
