@@ -7,6 +7,9 @@
     "esbenp.prettier-vscode",
 
     // For Tailwind CSS autocompletion and linting
-    "bradlc.vscode-tailwindcss"
+    "bradlc.vscode-tailwindcss",
+
+    // For schema.prisma
+    "Prisma.prisma"
   ]
 }

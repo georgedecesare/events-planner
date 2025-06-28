@@ -1,6 +1,15 @@
 'use client';
 
-export default function TextInput({
+export default function Email() {
+  return (
+    <TextInput
+      placeholder="email@domain.com"
+      onChangeAction={(value) => console.log(value)}
+    />
+  );
+}
+
+function TextInput({
   type = 'text',
   placeholder,
   onChangeAction,
@@ -16,7 +25,7 @@ export default function TextInput({
         placeholder={placeholder}
         onChange={(e) => onChangeAction(e.target.value)}
         className="rounded-lg border border-gray-300 px-4 py-2 focus:ring-2 focus:ring-blue-500
-          focus:outline-none"
+          focus:outline-none mt-5"
       />
     </div>
   );
