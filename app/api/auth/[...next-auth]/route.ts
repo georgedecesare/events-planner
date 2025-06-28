@@ -18,3 +18,6 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
     }),
   ],
 });
+
+// Export HTTP method handlers for Next.js API routes
+export const { GET, POST } = handlers;

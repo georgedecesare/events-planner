@@ -4,7 +4,10 @@ import Image from 'next/image';
 
 async function signInWithGoogle() {
   'use server';
-  await signIn('google');
+  await signIn('google', {
+    redirect: true,
+    redirectTo: '/invitations',
+  });
 }
 
 export default async function SignInWithGoogle() {
