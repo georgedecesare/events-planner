@@ -1,2 +1,21 @@
-import { handlers } from '@/auth'; // Referring to the auth.ts we just created
-export const { GET, POST } = handlers;
+import NextAuth from 'next-auth';
+import { PrismaAdapter } from '@auth/prisma-adapter';
+import { PrismaClient } from '@prisma/client';
+import GoogleProvider from 'next-auth/providers/google';
+
+// It's best practice to instantiate Prisma Client outside the handler
+// to avoid creating too many connections in a serverless environment.
+const prisma = new PrismaClient();
+
+export const { handlers, auth, signIn, signOut } = NextAuth({
+  // Here is the crucial part
+  adapter: PrismaAdapter(prisma),
+
+  providers: [
+    GoogleProvider({
+      clientId: process.env.GOOGLE_CLIENT_ID,
+      clientSecret: process.env.GOOGLE_CLIENT_SECRET,
+    }),
+  ],
+  // ... other options
+});
