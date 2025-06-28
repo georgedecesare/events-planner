@@ -7,7 +7,7 @@ import GoogleProvider from 'next-auth/providers/google';
 // to avoid creating too many connections in a serverless environment.
 const prisma = new PrismaClient();
 
-export const { handlers, auth, signIn, signOut } = NextAuth({
+const { handlers, auth, signIn, signOut } = NextAuth({
   // Here is the crucial part
   adapter: PrismaAdapter(prisma),
 
@@ -21,3 +21,4 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
 
 // Export HTTP method handlers for Next.js API routes
 export const { GET, POST } = handlers;
+export { auth, signIn, signOut };
