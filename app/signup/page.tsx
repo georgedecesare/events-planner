@@ -1,14 +1,8 @@
-'use client';
-
-import { useState } from 'react';
-import Image from 'next/image';
-import SignupButton from './button';
 import Loading from './loading';
-import TextInput from './textinput';
+import SignInWithGoogle from './google';
+import Email from './email';
 
 export default function Signup() {
-  const [loading, setLoading] = useState(false);
-
   return (
     <>
       <div
@@ -42,14 +36,8 @@ export default function Signup() {
               Enter your email to sign up for this app
             </p>
           </div>
-          <TextInput
-            placeholder="email@domain.com"
-            onChangeAction={(value) => console.log(value)}
-          />
-          <div
-            className="flex items-center justify-center text-sm hover:cursor-pointer"
-            onClick={() => submit(setLoading)}
-          >
+          <Email />
+          <div className="flex items-center justify-center text-sm hover:cursor-pointer">
             Continue
           </div>
         </div>
@@ -61,20 +49,7 @@ export default function Signup() {
         </div>
 
         <div className="w-full">
-          <SignupButton
-            leading={
-              <Image src="/google.svg" alt="Google" width={20} height={20} />
-            }
-            text="Sign up with Google"
-            action={() => console.log('Google sign up clicked')}
-          />
-          <SignupButton
-            leading={
-              <Image src="/apple.svg" alt="Apple" width={20} height={20} />
-            }
-            text="Sign up with Apple"
-            action={() => console.log('Apple sign up clicked')}
-          />
+          <SignInWithGoogle />
         </div>
 
         <footer>
@@ -86,15 +61,7 @@ export default function Signup() {
         </footer>
       </div>
 
-      <Loading loading={loading} />
+      <Loading loading={false} />
     </>
   );
-}
-
-function submit(setLoading: (loading: boolean) => void) {
-  setLoading(true);
-  setTimeout(() => {
-    setLoading(false);
-    window.location.href = '/invitations/1';
-  }, 2000); // Simulate a network request
 }

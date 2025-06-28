@@ -16,7 +16,7 @@
     "framer-motion": "^12.19.1",
     "material-symbols": "^0.31.9",
     "next": "15.3.4",
-    "next-auth": "^4.24.11",
+    "next-auth": "5.0.0-beta.29",
     "passport": "^0.7.0",
     "passport-google-oauth20": "^2.0.0",
     "passport-local": "^1.0.0",

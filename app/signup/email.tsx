@@ -1,6 +1,15 @@
 'use client';
 
-export default function TextInput({
+export default function Email() {
+  return (
+    <TextInput
+      placeholder="email@domain.com"
+      onChangeAction={(value) => console.log(value)}
+    />
+  );
+}
+
+function TextInput({
   type = 'text',
   placeholder,
   onChangeAction,

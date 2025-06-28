@@ -6,10 +6,12 @@ export default function SignupButton({
   leading,
   text,
   action = () => {},
+  type = 'button',
 }: {
   leading: JSX.Element;
   text: string;
-  action: () => void;
+  action?: () => void;
+  type: 'button' | 'submit';
 }) {
   return (
     <button
@@ -18,6 +20,7 @@ export default function SignupButton({
         duration-200 hover:cursor-pointer focus:ring-2 focus:ring-gray-500
         focus:outline-none mt-2"
       onClick={action}
+      type={type}
     >
       {leading}
       {text}
