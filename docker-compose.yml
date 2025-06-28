@@ -1,0 +1,14 @@
+services:
+  db:
+    image: postgres:16-alpine # Using a lightweight PostgreSQL image
+    restart: always
+    # Load environment variables directly from Next.js's .env.local file
+    env_file:
+      - ./.env # This tells Docker Compose to load variables from .env.local
+    volumes:
+      - db_data:/var/lib/postgresql/data # Persist data to a Docker volume
+    ports:
+      - '5432:5432' # Map host port 5432 to container port 5432
+
+volumes:
+  db_data: # Define the Docker volume for persistent data
