@@ -55,6 +55,8 @@ jobs:
           username: ${{ secrets.SSH_USER }}
           key: ${{ secrets.SSH_KEY }}
           script: |
-            cd ~/stefan-events
+            cd ~/events-planner
+            export NVM_DIR=~/.nvm
+            source ~/.nvm/nvm.sh
             npm install --production
             pm2 restart stefan-events
