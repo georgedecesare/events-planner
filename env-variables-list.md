@@ -1,6 +1,6 @@
-# Environment Variables for .env.production
+# Environment Variables for .env
 
-This file lists all the environment variables that should be included in your `.env.production` file for the stefan-events application.
+This file lists all the environment variables that should be included in your `.env` file for the stefan-events application.
 
 ## Required Environment Variables
 
@@ -61,7 +61,7 @@ This file lists all the environment variables that should be included in your `.
 4. **Ensure DATABASE_URL uses SSL in production**
 5. **Double-check Google OAuth URLs match your production domain**
 
-## Example .env.production Template
+## Example .env Template
 
 ```bash
 # Database
@@ -86,7 +86,7 @@ Your current GitHub Actions workflow copies environment variables using:
 ```bash
 for secret in $(env); do
   echo "Writing environment variable $secret"
-  echo "$secret=${!secret}" >> .env.production
+  echo "$secret=${!secret}" >> .env
 done
 ```
 
