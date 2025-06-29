@@ -18,7 +18,8 @@ This file lists all the environment variables that should be included in your `.
 
 - `NEXTAUTH_URL` - Canonical URL of your site for NextAuth.js
   - Example: `https://your-domain.com`
-  - Important for OAuth redirects
+  - Important for OAuth redirects and callbacks
+  - Required in production for proper OAuth flow
 
 ### Google OAuth Configuration
 
@@ -38,6 +39,7 @@ This file lists all the environment variables that should be included in your `.
 - `NEXTAUTH_URL` - Base URL for NextAuth callbacks
   - Same as the canonical URL above
   - Required for proper OAuth redirects
+  - Must match the domain where your app is hosted
 
 ## Optional Environment Variables
 
