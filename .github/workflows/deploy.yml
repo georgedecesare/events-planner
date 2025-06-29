@@ -18,13 +18,8 @@ jobs:
         with:
           node-version: '18' # Or your desired Node.js version
 
-      - name: Install pnpm
-        uses: pnpm/action-setup@v2
-        with:
-          version: latest
-
       - name: Install Dependencies
-        run: pnpm install
+        run: npm install
 
       - name: Build Application
         run: |
@@ -36,14 +31,14 @@ jobs:
             echo "DATABASE_URL_POOLED=${{ secrets.DATABASE_URL_POOLED }}" >> .env.production
             echo "DB_HOST=${{ secrets.DB_HOST }}" >> .env.production
             echo "DB_PORT=${{ secrets.DB_PORT }}" >> .env.production
-            echo "NEXTAUTH_URL=${{ secrets.AUTH_URL }}" >> .env.production
-            echo "AUTH_TRUST_HOST=${{ secrets.AUTH_TRUST_HOST }}" >> .env.production
+            echo "AUTH_URL=${{ secrets.AUTH_URL }}" >> .env.production
+            echo "NEXTAUTH_URL=${{ secrets.NEXTAUTH_URL }}" >> .env.production
             echo "POSTGRES_DB=${{ secrets.POSTGRES_DB }}" >> .env.production
             echo "POSTGRES_PASSWORD=${{ secrets.POSTGRES_PASSWORD }}" >> .env.production
             echo "POSTGRES_USER=${{ secrets.POSTGRES_USER }}" >> .env.production
             echo "AUTH_TRUST_HOST=${{ secrets.AUTH_TRUST_HOST }}" >> .env.production
           # Add other environment variables here
-          pnpm run build
+          npm run build
 
       - name: Deploy to VM
         uses: appleboy/scp-action@master
@@ -52,7 +47,7 @@ jobs:
           username: ${{ secrets.SSH_USER }}
           key: ${{ secrets.SSH_KEY }}
           port: 22
-          source: '.next, package.json, pnpm-lock.yaml, public, next.config.ts, .env.production, prisma, types'
+          source: '.next, package.json, public, next.config.js, .env.production'
           target: '~/events-planner' # A directory on your VM
 
       - name: Restart PM2
@@ -65,5 +60,5 @@ jobs:
             cd ~/events-planner
             export NVM_DIR=~/.nvm
             source ~/.nvm/nvm.sh
-            pnpm install --prod
+            npm install --production
             pm2 restart stefan-events
