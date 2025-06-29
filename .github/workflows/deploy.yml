@@ -46,7 +46,7 @@ jobs:
           username: ${{ secrets.SSH_USER }}
           key: ${{ secrets.SSH_KEY }}
           port: 22
-          source: '.next, package.json, public, next.config.js'
+          source: '.next, package.json, public, next.config.js .env.production'
           target: '~/events-planner' # A directory on your VM
 
       - name: Restart PM2
