@@ -18,8 +18,13 @@ jobs:
         with:
           node-version: '18' # Or your desired Node.js version
 
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 8
+
       - name: Install Dependencies
-        run: npm install
+        run: pnpm install
 
       - name: Build Application
         run: |
@@ -46,7 +51,7 @@ jobs:
           username: ${{ secrets.SSH_USER }}
           key: ${{ secrets.SSH_KEY }}
           port: 22
-          source: '.next, package.json, public, next.config.js, .env'
+          source: '.next, package.json, public, next.config.ts, .env'
           target: '~/events-planner' # A directory on your VM
 
       - name: Migrate Database
