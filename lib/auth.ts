@@ -11,7 +11,7 @@ const prisma = new PrismaClient();
 const combinedProviders = [
   ...authConfig.providers,
   Resend({
-    from: 'noreply@events.decesare.dev',
+    from: process.env.RESEND_FROM_ADDR!,
     apiKey: process.env.RESEND_API_KEY!,
     sendVerificationRequest: sendVerificationRequest,
     maxAge: 60 * 60 * 24, // Email link will expire in 24 hours

@@ -15,7 +15,7 @@ export default async function sendVerificationRequest(
     body: JSON.stringify({
       from: provider.from,
       to,
-      subject: `Sign in to ${host}`,
+      subject: `Sign in to events.decesare.dev`,
       html: html({ url, host, theme }),
       text: text({ url, host }),
     }),
