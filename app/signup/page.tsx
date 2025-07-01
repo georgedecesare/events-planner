@@ -40,9 +40,6 @@ export default function Signup() {
             </p>
           </div>
           <Email />
-          <div className="flex items-center justify-center text-sm hover:cursor-pointer">
-            Continue
-          </div>
         </div>
 
         <div className="flex min-w-full items-center justify-center mt-5">
