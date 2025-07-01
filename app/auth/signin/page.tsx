@@ -34,10 +34,10 @@ export default function Signup() {
 
         <div className="mt-5 w-full">
           <div className="text-center">
-            <h2 className="text-lg font-bold text-white">Create an account</h2>
-            <p className="text-footnote text-sm">
-              Enter your email to sign up for this app
-            </p>
+            <h2 className="text-lg font-bold text-white">
+              Sign In/Create Account
+            </h2>
+            <p className="text-footnote text-sm">Sign in using your email</p>
           </div>
           <Email />
         </div>
@@ -55,7 +55,7 @@ export default function Signup() {
 
         <footer>
           <p className="text-footnote text-center mt-5">
-            By clicking continue, you agree to our{' '}
+            By continuing, you agree to our{' '}
             <span className="text-blue-600">Terms of Service</span> and{' '}
             <span className="text-blue-600">Privacy Policy</span>.
           </p>

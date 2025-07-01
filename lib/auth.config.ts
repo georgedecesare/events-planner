@@ -17,6 +17,13 @@ export default {
   secret: process.env.AUTH_SECRET,
   trustHost: true, // This allows Auth.js to trust the production domain
   pages: {
-    signIn: '/signup',
+    signIn: '/auth/signin',
+    verifyRequest: '/auth/verify-request', // Custom page for email verification success
+  },
+  callbacks: {
+    authorized: async ({ auth }) => {
+      // Logged in users are authenticated, otherwise redirect to login page
+      return !!auth;
+    },
   },
 } satisfies NextAuthConfig;
