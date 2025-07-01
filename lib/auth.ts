@@ -21,6 +21,7 @@ const combinedProviders = [
 ];
 
 export const { handlers, auth, signIn, signOut } = NextAuth({
+  ...authConfig,
   providers: combinedProviders,
   adapter: PrismaAdapter(prisma),
   session: { strategy: 'jwt' },

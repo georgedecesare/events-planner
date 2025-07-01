@@ -18,5 +18,6 @@ export default {
   trustHost: true, // This allows Auth.js to trust the production domain
   pages: {
     signIn: '/signup',
+    verifyRequest: '/auth/verify-request', // Custom page for email verification success
   },
 } satisfies NextAuthConfig;

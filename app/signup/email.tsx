@@ -6,7 +6,11 @@ async function signInWithEmail(formData: FormData) {
   'use server';
   const email = formData.get('email') as string;
   console.log('Signing in with email:', email);
-  await signIn('email', { redirect: true, email });
+  await signIn('email', {
+    redirect: true,
+    redirectTo: '/auth/verify-request',
+    email,
+  });
 }
 
 export default async function Email() {
