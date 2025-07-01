@@ -1,4 +1,5 @@
 import Google from 'next-auth/providers/google';
+import Discord from 'next-auth/providers/discord';
 import type { NextAuthConfig } from 'next-auth';
 
 // Notice this is only an object, not a full Auth.js instance
@@ -7,6 +8,10 @@ export default {
     Google({
       clientId: process.env.AUTH_GOOGLE_ID!,
       clientSecret: process.env.AUTH_GOOGLE_SECRET!,
+    }),
+    Discord({
+      clientId: process.env.AUTH_DISCORD_ID!,
+      clientSecret: process.env.AUTH_DISCORD_SECRET!,
     }),
   ],
   secret: process.env.AUTH_SECRET,

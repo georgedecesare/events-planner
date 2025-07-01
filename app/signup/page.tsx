@@ -1,6 +1,7 @@
 import Loading from './loading';
 import SignInWithGoogle from './google';
 import Email from './email';
+import SignInWithDiscord from './discord';
 
 export default function Signup() {
   return (
@@ -50,6 +51,7 @@ export default function Signup() {
 
         <div className="w-full">
           <SignInWithGoogle />
+          <SignInWithDiscord />
         </div>
 
         <footer>
