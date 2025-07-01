@@ -20,4 +20,10 @@ export default {
     signIn: '/auth/signin',
     verifyRequest: '/auth/verify-request', // Custom page for email verification success
   },
+  callbacks: {
+    authorized: async ({ auth }) => {
+      // Logged in users are authenticated, otherwise redirect to login page
+      return !!auth;
+    },
+  },
 } satisfies NextAuthConfig;
