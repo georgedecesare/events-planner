@@ -1,7 +1,7 @@
-import Loading from './loading';
 import SignInWithGoogle from './google';
 import Email from './email';
 import SignInWithDiscord from './discord';
+import ErrorToast from './error_toast';
 
 export default function Signup() {
   return (
@@ -64,8 +64,7 @@ export default function Signup() {
           </p>
         </footer>
       </div>
-
-      <Loading loading={false} />
+      <ErrorToast />
     </>
   );
 }
