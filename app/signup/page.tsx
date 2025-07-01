@@ -1,6 +1,7 @@
 import Loading from './loading';
 import SignInWithGoogle from './google';
 import Email from './email';
+import SignInWithDiscord from './discord';
 
 export default function Signup() {
   return (
@@ -14,18 +15,20 @@ export default function Signup() {
             Welcome to our group!
           </h1>
           <p className="justify-center text-center text-sm mt-5">
-            Congratulations on being chosen to join a first of its kind social
-            group! We&apos;re committed to giving you the best possible
-            experience as a gay man here in London.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua.
             <br />
-            This platform serves to help us organize our upcoming exciting
-            events where you&apos;ll have the opportunity to meet the other
-            members of our group in person.
+            Duis aute irure dolor in reprehenderit in voluptate velit esse
+            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+            cupidatat non proident, sunt in culpa qui officia deserunt mollit
+            anim id est laborum.
             <br />
-            Lets make some fun together! And remember...
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua.
             <br />
             <br />
-            Down with the appropriation! Our group reveals the truth!
+            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+            nisi ut aliquip ex ea commodo consequat!
           </p>
         </div>
 
@@ -50,6 +53,7 @@ export default function Signup() {
 
         <div className="w-full">
           <SignInWithGoogle />
+          <SignInWithDiscord />
         </div>
 
         <footer>
