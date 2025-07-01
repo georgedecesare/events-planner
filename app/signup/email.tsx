@@ -2,13 +2,17 @@
 
 import { signIn } from '@/lib/auth';
 
+async function signInWithEmail(formData: FormData) {
+  'use server';
+  const email = formData.get('email') as string;
+  console.log('Signing in with email:', email);
+  await signIn('email', { redirect: true, email });
+}
+
 export default async function Email() {
   return (
     <form action={signInWithEmail}>
-      <TextInput
-        placeholder="email@domain.com"
-        onChangeAction={(value) => console.log(value)}
-      />
+      <TextInput type="email" placeholder="email@domain.com" name="email" />
       <div className="w-full flex items-center justify-center">
         <button
           type="submit"
@@ -20,31 +24,24 @@ export default async function Email() {
     </form>
   );
 }
-
 function TextInput({
   type = 'text',
   placeholder,
+  name,
 }: {
   type?: string;
   placeholder?: string;
-  onChangeAction: (value: string) => void;
+  name?: string;
 }) {
   return (
     <div className="mb-4 flex flex-col">
       <input
         type={type}
         placeholder={placeholder}
+        name={name}
         className="rounded-lg border border-gray-300 px-4 py-2 focus:ring-2 focus:ring-blue-500
           focus:outline-none mt-5"
       />
     </div>
   );
-}
-
-async function signInWithEmail() {
-  'use server';
-  await signIn('resend', {
-    redirect: true,
-    redirectTo: '/invitations',
-  });
 }
