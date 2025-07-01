@@ -1,10 +1,9 @@
 import { EmailProviderSendVerificationRequestParams } from 'next-auth/providers';
-import type { Theme } from '@auth/core/types';
 
 export default async function sendVerificationRequest(
   params: EmailProviderSendVerificationRequestParams
 ) {
-  const { identifier: to, provider, url, theme } = params;
+  const { identifier: to, provider, url } = params;
   const { host } = new URL(url);
   const res = await fetch('https://api.resend.com/emails', {
     method: 'POST',
@@ -16,7 +15,7 @@ export default async function sendVerificationRequest(
       from: provider.from,
       to,
       subject: `Sign in to events.decesare.dev`,
-      html: html({ url, host, theme }),
+      html: html({ url, host }),
       text: text({ url, host }),
     }),
   });
@@ -30,7 +29,7 @@ function text(params: { url: string; host: string }) {
   return `Sign in to ${host}\n${url}\n\nIf you did not request this email you can safely ignore it.`;
 }
 
-function html(params: { url: string; host: string; theme: Theme }) {
+function html(params: { url: string; host: string }) {
   const { url } = params;
 
   return `
