@@ -1,7 +1,7 @@
-import Loading from './loading';
 import SignInWithGoogle from './google';
 import Email from './email';
 import SignInWithDiscord from './discord';
+import ErrorToast from './error_toast';
 
 export default function Signup() {
   return (
@@ -40,9 +40,6 @@ export default function Signup() {
             </p>
           </div>
           <Email />
-          <div className="flex items-center justify-center text-sm hover:cursor-pointer">
-            Continue
-          </div>
         </div>
 
         <div className="flex min-w-full items-center justify-center mt-5">
@@ -64,8 +61,7 @@ export default function Signup() {
           </p>
         </footer>
       </div>
-
-      <Loading loading={false} />
+      <ErrorToast />
     </>
   );
 }
