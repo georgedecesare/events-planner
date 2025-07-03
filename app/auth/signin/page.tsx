@@ -5,7 +5,7 @@ import SignInForm from './signin_form';
 export default async function Signup({
   searchParams,
 }: {
-  searchParams: { next?: string };
+  searchParams: Promise<{ next?: string }>;
 }) {
   const params = await searchParams;
   const next = params.next ?? '/';
