@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import Email from './email';
 import ErrorToast from './error_toast';
 import SignInForm from './signin_form';
@@ -16,33 +17,27 @@ export default async function Signup({
           justify-between"
       >
         <div>
-          <h1 className="text-center text-2xl font-bold">
-            Welcome to our group!
+          <h1 className="text-center text-3xl/tight font-light">
+            The VORDADE
+            <br />
+            <span className="italic font-extralight">welcomes you</span>
           </h1>
-          <p className="justify-center text-center text-sm mt-5">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua.
-            <br />
-            Duis aute irure dolor in reprehenderit in voluptate velit esse
-            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-            cupidatat non proident, sunt in culpa qui officia deserunt mollit
-            anim id est laborum.
-            <br />
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua.
-            <br />
-            <br />
-            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
-            nisi ut aliquip ex ea commodo consequat!
-          </p>
+          <Image
+            src="/vordade.svg"
+            alt="Vordade Logo hero image"
+            width={250}
+            height={250}
+          />
         </div>
 
         <div className="mt-5 w-full">
           <div className="text-center">
             <h2 className="text-lg font-bold text-white">
-              Sign In/Create Account
+              Continue with Email
             </h2>
-            <p className="text-footnote text-sm">Sign in using your email</p>
+            <p className="text-footnote text-sm">
+              Get an SSO link sent to your email
+            </p>
           </div>
           <Email next={next} />
         </div>
