@@ -2,18 +2,17 @@
 
 import { signIn } from '@/lib/auth';
 
-async function signInWithEmail(formData: FormData) {
-  'use server';
-  const email = formData.get('email') as string;
-  console.log('Signing in with email:', email);
-  await signIn('email', {
-    redirect: true,
-    redirectTo: '/auth/verify-request',
-    email,
-  });
-}
+export default async function Email({ next }: { next: string }) {
+  async function signInWithEmail(formData: FormData) {
+    'use server';
+    const email = formData.get('email') as string;
+    await signIn('email', {
+      redirect: true,
+      redirectTo: next,
+      email,
+    });
+  }
 
-export default async function Email() {
   return (
     <form action={signInWithEmail}>
       <TextInput type="email" placeholder="email@domain.com" name="email" />

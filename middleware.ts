@@ -4,9 +4,12 @@ export default auth((req) => {
   if (
     !req.auth &&
     req.nextUrl.pathname !== '/auth/signin' &&
-    req.nextUrl.pathname !== '/'
+    req.nextUrl.pathname !== '/auth/verify-request'
   ) {
-    const newUrl = new URL('/auth/signin', req.nextUrl.origin);
+    const newUrl = new URL(
+      `/auth/signin?next=${req.nextUrl.pathname}`,
+      req.nextUrl.origin
+    );
     return Response.redirect(newUrl);
   }
 });

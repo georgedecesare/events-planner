@@ -1,9 +1,14 @@
-import SignInWithGoogle from './google';
 import Email from './email';
-import SignInWithDiscord from './discord';
 import ErrorToast from './error_toast';
+import SignInForm from './signin_form';
 
-export default function Signup() {
+export default async function Signup({
+  searchParams,
+}: {
+  searchParams: Promise<{ next?: string }>;
+}) {
+  const params = await searchParams;
+  const next = params.next ?? '/';
   return (
     <>
       <div
@@ -39,7 +44,7 @@ export default function Signup() {
             </h2>
             <p className="text-footnote text-sm">Sign in using your email</p>
           </div>
-          <Email />
+          <Email next={next} />
         </div>
 
         <div className="flex min-w-full items-center justify-center mt-5">
@@ -49,8 +54,8 @@ export default function Signup() {
         </div>
 
         <div className="w-full">
-          <SignInWithGoogle />
-          <SignInWithDiscord />
+          <SignInForm method="google" next={next} />
+          <SignInForm method="discord" next={next} />
         </div>
 
         <footer>
