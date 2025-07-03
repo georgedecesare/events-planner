@@ -44,7 +44,7 @@ export default async function Signup({
             </h2>
             <p className="text-footnote text-sm">Sign in using your email</p>
           </div>
-          <Email />
+          <Email next={next} />
         </div>
 
         <div className="flex min-w-full items-center justify-center mt-5">
