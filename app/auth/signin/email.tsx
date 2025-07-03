@@ -5,10 +5,10 @@ import { signIn } from '@/lib/auth';
 async function signInWithEmail(formData: FormData) {
   'use server';
   const email = formData.get('email') as string;
-  console.log('Signing in with email:', email);
+  const next = (formData.get('next') as string) || '/';
   await signIn('email', {
     redirect: true,
-    redirectTo: '/auth/verify-request',
+    redirectTo: next,
     email,
   });
 }
