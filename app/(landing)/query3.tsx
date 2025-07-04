@@ -1,6 +1,3 @@
-'use client';
-
-import React from 'react';
 import 'material-symbols';
 
 export default function Query3Page() {

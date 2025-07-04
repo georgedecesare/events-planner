@@ -1,7 +1,3 @@
-'use client';
-
-import React from 'react';
-
 export default function Query1Page() {
   return (
     <div>
