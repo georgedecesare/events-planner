@@ -7,12 +7,7 @@ export default function PageControl({
 }) {
   return (
     <div className="mt-5 flex w-full flex-col items-center justify-center">
-      <button
-        className="bg-orange-accent cursor-pointer rounded-3xl px-4 py-2 select-none"
-        onClick={nextPage}
-      >
-        {page === 3 ? 'Done' : 'Next'}
-      </button>
+      {page === 3 ? <SubmitButton /> : <NextButton nextPage={nextPage} />}
       <div className="mt-3 flex flex-row items-center gap-1">
         <Indicator active={page === 1} />
         <Indicator active={page === 2} />
@@ -30,5 +25,28 @@ function Indicator({ active }: { active: boolean }) {
           ${active ? 'size-3 bg-orange-accent' : 'size-2 bg-white'} `}
       />
     </div>
+  );
+}
+
+function NextButton({ nextPage }: { nextPage: () => void }) {
+  return (
+    <button
+      type="button"
+      className="bg-orange-accent cursor-pointer rounded-3xl px-4 py-2 select-none"
+      onClick={nextPage}
+    >
+      Next
+    </button>
+  );
+}
+
+function SubmitButton() {
+  return (
+    <button
+      type="submit"
+      className="bg-orange-accent cursor-pointer rounded-3xl px-4 py-2 select-none"
+    >
+      Submit
+    </button>
   );
 }
