@@ -25,15 +25,14 @@ export default function Query2Page() {
 }
 
 function Day({ name }: { name: string }) {
-  const [active, setActive] = React.useState(false);
   return (
-    <div
-      className={`text-md flex w-full cursor-pointer items-center justify-center rounded-sm py-4
-        text-white transition-all duration-200 ease-in-out select-none
-        ${active ? 'bg-orange-accent' : 'bg-gray-container'}`}
-      onClick={() => setActive(!active)}
+    <label
+      className="text-md flex w-full cursor-pointer items-center justify-center rounded-sm py-4
+        text-white transition-all duration-200 ease-in-out select-none bg-gray-container
+        has-checked:bg-orange-accent"
     >
       {name}
-    </div>
+      <input type="checkbox" className="hidden" name={name.toLowerCase()} />
+    </label>
   );
 }
