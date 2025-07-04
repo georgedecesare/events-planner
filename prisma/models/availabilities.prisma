@@ -1,0 +1,25 @@
+model UserAvailability {
+  id            String   @id @default(cuid())
+  weekStartDate DateTime @db.Date
+  description   String?
+
+  userId String
+  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+enum DayOfWeek {
+  MONDAY
+  TUESDAY
+  WEDNESDAY
+  THURSDAY
+  FRIDAY
+  SATURDAY
+  SUNDAY
+}
+
+model DaysUnavailable {
+  id        String    @id @default(cuid())
+  dayOfWeek DayOfWeek
+  userId    String
+  user      User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
