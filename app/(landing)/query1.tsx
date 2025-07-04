@@ -29,7 +29,7 @@ function Month({ name }: { name: string }) {
         has-checked:bg-orange-accent"
     >
       {name}
-      <input name={name} type="checkbox" className="hidden" />
+      <input name={name.toLowerCase()} type="checkbox" className="hidden" />
     </label>
   );
 }
